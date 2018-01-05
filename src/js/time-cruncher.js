@@ -5,17 +5,17 @@ const daysPerYear = 365;
 const secondsPerDay = secondsPerMinute * minutesPerHour * hoursPerDay;
 const secondsPerYear = secondsPerDay * daysPerYear;
 
-export class AgeCalculator {
-  constructor() {
+export class TimeCruncher {
+  constructor(begin, end) {
+    this.beginTime = moment(begin);
+    this.endTime = moment(end);
   }
 
   ageToSeconds(age) {
     return age * secondsPerYear;
   }
 
-  timeDifference(begin, end) {
-    const beginTime = moment(begin);
-    const endTime = moment(end);
-    return beginTime.diff(endTime, 'seconds');
+  timeDifference() {
+    return this.beginTime.diff(this.endTime, 'seconds');
   }
 }
