@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "gulp": "^3.9.1"
+    "browserify": "^15.0.0",
+    "gulp": "^3.9.1",
+    "vinyl-source-stream": "^2.0.0"
   }
 }
