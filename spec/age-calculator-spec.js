@@ -1,13 +1,12 @@
 import { AgeCalculator } from './../src/js/age-calculator.js';
 
 describe('AgeCalculator', function() {
-
+  const today = '2017-01-05';
+  const birth = '1985-12-19';
   let newAge;
 
   beforeEach(function() {
-    const a = '2017-01-05';
-    const b = '1985-12-19';
-    newAge = new AgeCalculator(a, b);
+    newAge = new AgeCalculator();
   });
 
 
@@ -17,6 +16,11 @@ describe('AgeCalculator', function() {
   });
 
   it('should test whether AgeCalculator returns difference in seconds between two dates', function() {
-    expect(newAge.timeDifference()).toEqual(979776000);
+    expect(newAge.timeDifference(today, birth)).toEqual(979776000);
   });
+
+  // it('should test whether AgeCalculator returns age in Mercury years from inputted birthdate to current date', function() {
+  //   expect(newAge)
+  // });
+
 });
