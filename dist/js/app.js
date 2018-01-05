@@ -24,7 +24,7 @@ var AgeCalculator = exports.AgeCalculator = function () {
   _createClass(AgeCalculator, [{
     key: "ageToSeconds",
     value: function ageToSeconds(age) {
-      return age * secondsPerDay;
+      return age * secondsPerYear;
     }
   }]);
 
@@ -36,13 +36,8 @@ var AgeCalculator = exports.AgeCalculator = function () {
 
 var _ageCalculator = require('./../src/js/age-calculator.js');
 
-$(function () {
-  $('#user-input').submit(function (event) {
-    event.preventDefault();
-    var userAge = $('#age-input').val();
-    var newCalculation = new _ageCalculator.AgeCalculator(userAge);
-    $('#age-output').text();
-  });
+$(document).ready(function () {
+  $('#time').text(moment());
 });
 
 },{"./../src/js/age-calculator.js":1}]},{},[2]);
