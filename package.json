@@ -1,0 +1,14 @@
+{
+  "name": "super-galactic-age-calculator",
+  "version": "1.0.0",
+  "description": "A calculator to determine a user's age based on different solar years.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
