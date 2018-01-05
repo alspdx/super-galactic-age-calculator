@@ -15,8 +15,9 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'js/*.js',
+      'dist/js/*.js',
       'spec/*-spec.js',
+      'bower_components/moment/moment.js'
     ],
 
 
