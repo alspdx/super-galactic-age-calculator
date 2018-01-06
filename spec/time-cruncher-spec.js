@@ -26,4 +26,9 @@ describe('TimeCruncher', function() {
     expect(newTimeCrunch.timeDifference('Venus')).toEqual(51.723376049491826);
   });
 
+  it('should test whether TimeCruncher returns age in Mars years from inputted birthdate to current date', function() {
+    expect(newTimeCrunch.timeDifference('Mars')).toEqual(17.05770912270475);
+  });
+
+
 });
