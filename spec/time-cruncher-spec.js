@@ -1,7 +1,7 @@
 import { TimeCruncher } from './../src/js/time-cruncher.js';
 
 describe('TimeCruncher', function() {
-  const today = '2017-01-05';
+  const today = '2018-01-05';
   const birth = '1985-12-19';
   let newTimeCrunch;
 
@@ -14,12 +14,16 @@ describe('TimeCruncher', function() {
     expect(newTimeCrunch.ageToSeconds(2)).toEqual(63072000);
   });
 
-  it('should test whether TimeCruncher returns difference in seconds between two dates', function() {
-    expect(newTimeCrunch.timeDifference('Earth')).toEqual(979776000);
+  it('should test whether TimeCruncher returns difference in seconds between two Earth dates', function() {
+    expect(newTimeCrunch.timeDifference()).toEqual(1011312000);
   });
 
   it('should test whether TimeCruncher returns age in Mercury years from inputted birthdate to current date', function() {
-    expect(newTimeCrunch.timeDifference('Mercury')).toEqual(4082400000);
+    expect(newTimeCrunch.timeDifference('Mercury')).toEqual(133.61872146118722);
+  });
+
+  it('should test whether TimeCruncher returns age in Venus years from inputted birthdate to current date', function() {
+    expect(newTimeCrunch.timeDifference('Venus')).toEqual(51.723376049491826);
   });
 
 });

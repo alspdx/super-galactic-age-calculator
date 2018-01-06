@@ -16,15 +16,25 @@ export class TimeCruncher {
   }
 
   whichPlanet(planetName) {
+    let yearMultiplier;
+
     if (planetName === 'Earth') {
-      return 1;
+      yearMultiplier = 1;
     } else if (planetName === 'Mercury') {
-      return 0.24;
+      yearMultiplier = 0.24;
+    } else if (planetName === 'Venus') {
+      yearMultiplier = 0.62;
     }
+    return yearMultiplier * secondsPerYear;
   }
 
   timeDifference(planet) {
-    const divider = this.whichPlanet(planet);
-    return (this.beginTime.diff(this.endTime, 'seconds') / divider);
+    let divider;
+    if (planet) {
+      divider = this.whichPlanet(planet);
+    } else if (!planet) {
+      divider = 1;
+    }
+    return this.beginTime.diff(this.endTime, 'seconds') / divider;
   }
 }
