@@ -26,6 +26,8 @@ export class TimeCruncher {
       yearMultiplier = 0.62;
     } else if (planetName === 'Mars') {
       yearMultiplier = 1.88;
+    } else if (planetName === 'Jupiter') {
+      yearMultiplier = 11.86;
     }
     return yearMultiplier * secondsPerYear;
   }

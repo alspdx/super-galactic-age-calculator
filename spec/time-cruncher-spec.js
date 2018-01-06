@@ -30,5 +30,9 @@ describe('TimeCruncher', function() {
     expect(newTimeCrunch.timeDifference('Mars')).toEqual(17.05770912270475);
   });
 
+  it('should test whether TimeCruncher returns age in Jupiter years from inputted birthdate to current date', function() {
+    expect(newTimeCrunch.timeDifference('Jupiter')).toEqual(2.703920164475964);
+  });
+
 
 });
