@@ -9,18 +9,17 @@ describe('TimeCruncher', function() {
     newTimeCrunch = new TimeCruncher(today, birth);
   });
 
-
   it('should test whether TimeCruncher returns inputted age converted from years to seconds', function() {
     expect(newTimeCrunch.ageToSeconds(1)).toEqual(31536000);
     expect(newTimeCrunch.ageToSeconds(2)).toEqual(63072000);
   });
 
   it('should test whether TimeCruncher returns difference in seconds between two dates', function() {
-    expect(newTimeCrunch.timeDifference()).toEqual(979776000);
+    expect(newTimeCrunch.timeDifference('Earth')).toEqual(979776000);
   });
 
-  // it('should test whether TimeCruncher returns age in Mercury years from inputted birthdate to current date', function() {
-  //   expect(newAge)
-  // });
+  it('should test whether TimeCruncher returns age in Mercury years from inputted birthdate to current date', function() {
+    expect(newTimeCrunch.timeDifference('Mercury')).toEqual(4082400000);
+  });
 
 });

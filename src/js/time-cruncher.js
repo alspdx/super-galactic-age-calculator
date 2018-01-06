@@ -15,7 +15,16 @@ export class TimeCruncher {
     return age * secondsPerYear;
   }
 
-  timeDifference() {
-    return this.beginTime.diff(this.endTime, 'seconds');
+  whichPlanet(planetName) {
+    if (planetName === 'Earth') {
+      return 1;
+    } else if (planetName === 'Mercury') {
+      return 0.24;
+    }
+  }
+
+  timeDifference(planet) {
+    const divider = this.whichPlanet(planet);
+    return (this.beginTime.diff(this.endTime, 'seconds') / divider);
   }
 }
