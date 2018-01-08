@@ -18,23 +18,23 @@ describe('TimeCruncher', function() {
     expect(newTimeCrunch.ageOnPlanet()).toEqual(1011312000);
   });
 
-  it('should test whether TimeCruncher returns age in Mercury solar years', function() {
+  it('should test whether TimeCruncher returns user age in Mercury solar years', function() {
     expect(newTimeCrunch.ageOnPlanet('Mercury')).toEqual(133.61872146118722);
   });
 
-  it('should test whether TimeCruncher returns age in Venus solar years', function() {
+  it('should test whether TimeCruncher returns user age in Venus solar years', function() {
     expect(newTimeCrunch.ageOnPlanet('Venus')).toEqual(51.723376049491826);
   });
 
-  it('should test whether TimeCruncher returns age in Mars solar years', function() {
+  it('should test whether TimeCruncher returns user age in Mars solar years', function() {
     expect(newTimeCrunch.ageOnPlanet('Mars')).toEqual(17.05770912270475);
   });
 
-  it('should test whether TimeCruncher returns age in Jupiter solar years', function() {
+  it('should test whether TimeCruncher returns user age in Jupiter solar years', function() {
     expect(newTimeCrunch.ageOnPlanet('Jupiter')).toEqual(2.703920164475964);
   });
 
-  it('should test whether TimeCruncher returns life expectancy in solar years on Earth', function() {
+  it('should test whether TimeCruncher returns user life expectancy in solar years on Earth', function() {
     expect(newTimeCrunch.lifeExpectancy(true, false, 'Africa', 'Earth')).toEqual(55);
     expect(newTimeCrunch.lifeExpectancy(true, true, 'Asia', 'Earth')).toEqual(70);
     expect(newTimeCrunch.lifeExpectancy(false, false, 'Australia', 'Earth')).toEqual(67);
@@ -43,7 +43,7 @@ describe('TimeCruncher', function() {
     expect(newTimeCrunch.lifeExpectancy(false, true, 'South America', 'Earth')).toEqual(80);
   });
 
-  it('should test whether TimeCruncher returns life expectancy in solar years on other planets', function() {
+  it('should test whether TimeCruncher returns user life expectancy in solar years on other planets', function() {
     expect(newTimeCrunch.lifeExpectancy(true, false, 'North America', 'Mercury')).toEqual(300);
     expect(newTimeCrunch.lifeExpectancy(true, false, 'North America', 'Venus')).toEqual(116.12903225806451);
     expect(newTimeCrunch.lifeExpectancy(true, false, 'North America', 'Earth')).toEqual(72);
@@ -52,7 +52,7 @@ describe('TimeCruncher', function() {
 
   });
 
-  it('should test whether TimeCruncher returns message with remaining life in solar years on each planet', function() {
+  it('should test whether TimeCruncher returns message with user\'s remaining life in solar years on each planet', function() {
     expect(newTimeCrunch.lifeRemaining(true, false, 'North America', 'Mercury')).toEqual('It looks as though you have approximately 166.38 solar years left to live on Mercury. Enjoy!');
     expect(newTimeCrunch.lifeRemaining(true, false, 'North America', 'Venus')).toEqual('It looks as though you have approximately 64.41 solar years left to live on Venus. Enjoy!');
     expect(newTimeCrunch.lifeRemaining(true, false, 'North America', 'Earth')).toEqual('It looks as though you have approximately 39.93 solar years left to live on Earth. Enjoy!');
