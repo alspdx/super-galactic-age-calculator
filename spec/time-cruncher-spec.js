@@ -52,7 +52,7 @@ describe('TimeCruncher', function() {
 
   });
 
-  it('should test whether TimeCruncher returns remaining life in solar years on each planet', function() {
+  it('should test whether TimeCruncher returns message with remaining life in solar years on each planet', function() {
     expect(newTimeCrunch.lifeRemaining(true, false, 'North America', 'Mercury')).toEqual('It looks as though you have approximately 166.38 solar years left to live on Mercury. Enjoy!');
     expect(newTimeCrunch.lifeRemaining(true, false, 'North America', 'Venus')).toEqual('It looks as though you have approximately 64.41 solar years left to live on Venus. Enjoy!');
     expect(newTimeCrunch.lifeRemaining(true, false, 'North America', 'Earth')).toEqual('It looks as though you have approximately 39.93 solar years left to live on Earth. Enjoy!');
@@ -61,8 +61,8 @@ describe('TimeCruncher', function() {
   });
 
   it('should test whether TimeCruncher returns a special message if the user has passed the average life expectancy', function() {
-    const birthTwo = '1902-12-25';
-    const anotherNewTimeCruncher = new TimeCruncher(today, birthTwo);
+    const birthDate = '1902-12-25';
+    const anotherNewTimeCruncher = new TimeCruncher(today, birthDate);
     expect(anotherNewTimeCruncher.lifeRemaining(true, false, 'North America', 'Earth')).toEqual('Holy smokes! You should have been dead -43.11 Earth years ago!');
   });
 

@@ -4,6 +4,6 @@ $(document).ready(function(){
   const a = '2018-01-05';
   const b = '1985-12-19';
   const newTimeCrunch = new TimeCruncher(a, b);
-  
-  console.log("this long " + newTimeCrunch.timeDifference());
+
+  console.log(newTimeCrunch.lifeRemaining(false, true, 'Europe', 'Mars'));
 });
