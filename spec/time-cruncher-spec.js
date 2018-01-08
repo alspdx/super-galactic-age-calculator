@@ -35,12 +35,12 @@ describe('TimeCruncher', function() {
   });
 
   it('should test whether TimeCruncher returns life expectancy in solar years on Earth', function() {
+    expect(newTimeCrunch.lifeExpectancy(true, false, 'Africa', 'Earth')).toEqual(55);
+    expect(newTimeCrunch.lifeExpectancy(true, true, 'Asia', 'Earth')).toEqual(70);
+    expect(newTimeCrunch.lifeExpectancy(false, false, 'Australia', 'Earth')).toEqual(67);
+    expect(newTimeCrunch.lifeExpectancy(false, true, 'Europe', 'Earth')).toEqual(83);
     expect(newTimeCrunch.lifeExpectancy(true, false, 'North America', 'Earth')).toEqual(72);
     expect(newTimeCrunch.lifeExpectancy(false, true, 'South America', 'Earth')).toEqual(80);
-    expect(newTimeCrunch.lifeExpectancy(true, true, 'Asia', 'Earth')).toEqual(70);
-    expect(newTimeCrunch.lifeExpectancy(false, true, 'Europe', 'Earth')).toEqual(83);
-    expect(newTimeCrunch.lifeExpectancy(false, false, 'Australia', 'Earth')).toEqual(67);
-    expect(newTimeCrunch.lifeExpectancy(true, false, 'Africa', 'Earth')).toEqual(55);
   });
 
   it('should test whether TimeCruncher returns life expectancy in solar years on other planets', function() {
@@ -63,9 +63,6 @@ describe('TimeCruncher', function() {
   it('should test whether TimeCruncher returns a special message if the user has passed the average life expectancy', function() {
     const birthDate = '1902-12-25';
     const anotherNewTimeCruncher = new TimeCruncher(today, birthDate);
-    expect(anotherNewTimeCruncher.lifeRemaining(true, false, 'North America', 'Earth')).toEqual('Holy smokes! You should have been dead -43.11 Earth years ago!');
+    expect(anotherNewTimeCruncher.lifeRemaining(true, false, 'North America', 'Earth')).toEqual('Holy smokes! At this point you should have been dead for 43.11 solar years on Earth!');
   });
-
-  //If a user has already surpassed the average life expectancy, your application should account for (and test) this possible outcome as well.
-
 });

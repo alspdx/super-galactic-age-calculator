@@ -73,7 +73,7 @@ export class TimeCruncher {
     if (remaining > 0) {
       return `It looks as though you have approximately ${remaining} solar years left to live on ${planet}. Enjoy!`;
     } else if (remaining <= 0) {
-      return `Holy smokes! You should have been dead ${remaining} ${planet} years ago!`;
+      return `Holy smokes! At this point you should have been dead for ${-(remaining)} solar years on ${planet}!`;
     }
   }
 }

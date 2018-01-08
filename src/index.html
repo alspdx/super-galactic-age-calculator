@@ -8,8 +8,56 @@
     <script src="js/app.js"></script>
   </head>
   <body>
-    <div id="time">
+    <div class="wrapper">
+      <h1>Super Galactic Age Calculator</h1>
+      <p>Calculate your age and life expectancy based on the solar year of planets in our solar system!</p>
+      <form id="user-input">
+        <fieldset>
+          <legend>What is your date of birth?</legend>
+          <input id="birthdate" type="date" required>
+        </fieldset>
+        <fieldset>
+          <legend>Which continent are you from?</legend>
+          <select id="continent" name="continent" required>
+            <option disabled selected value> -- select an option -- </option>
+            <option value="Africa">Africa</option>
+            <option value="Asia">Asia</option>
+            <option value="Australia">Australia</option>
+            <option value="Europe">Europe</option>
+            <option value="North America">North America</option>
+            <option value="South America">South America</option>
+          </select>
+        </fieldset>
+        <fieldset>
+          <legend>Do you smoke?</legend>
+          <label for="yes">Yes</label>
+          <input type="radio" name="smoker" id="yes" value="true" required>
+          <label for="no">No</label>
+          <input type="radio" name="smoker" id="no" value="">
+        </fieldset>
+        <fieldset>
+          <legend>Do you exercise?</legend>
+          <label for="yes">Yes</label>
+          <input type="radio" name="exerciser" id="yes" value="true" required>
+          <label for="no">No</label>
+          <input type="radio" name="exerciser" id="no" value="">
+        </fieldset>
+        <fieldset>
+          <legend>Which planet's solar years would you like your age returned as?</legend>
+          <select id="planet" name="planet" required>
+            <option disabled selected value> -- select an option -- </option>
+            <option value="Mercury">Mercury</option>
+            <option value="Venus">Venus</option>
+            <option value="Earth">Earth</option>
+            <option value="Mars">Mars</option>
+            <option value="Jupiter">Jupiter</option>
+          </select>
+        </fieldset>
+        <button type="submit">Submit!</button>
+      </form>
+      <div class="output-message">
 
+      </div>
     </div>
   </body>
 </html>
