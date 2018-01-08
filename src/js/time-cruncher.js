@@ -41,4 +41,34 @@ export class TimeCruncher {
     }
     return this.beginTime.diff(this.endTime, 'seconds') / divider;
   }
+
+  lifeExpectancy(smoker, exerciser, continent) {
+    let finalAge;
+
+    if (continent === 'Africa') {
+      finalAge = 62;
+    } else if (continent === 'Asia') {
+      finalAge = 72;
+    } else if (continent === 'Europe') {
+      finalAge = 78;
+    } else if (continent === 'North America') {
+      finalAge = 79;
+    } else if (continent === 'South America') {
+      finalAge = 75;
+    } else if (continent === 'Australia') {
+      finalAge = 67;
+    }
+
+    if (smoker) {
+      finalAge -= 7;
+    }
+
+    if (exerciser) {
+      finalAge += 5;
+    }
+    return finalAge;
+  }
+
+  
+
 }
