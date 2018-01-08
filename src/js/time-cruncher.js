@@ -11,38 +11,36 @@ export class TimeCruncher {
     this.endTime = moment(end);
   }
 
-  ageToSeconds(age) {
-    return age * secondsPerYear;
+  ageToSeconds(ageInput) {
+    return ageInput * secondsPerYear;
   }
 
   whichPlanet(planetName) {
-    let yearMultiplier;
-
     if (planetName === 'Earth') {
-      yearMultiplier = 1;
+      return 1;
     } else if (planetName === 'Mercury') {
-      yearMultiplier = 0.24;
+      return 0.24;
     } else if (planetName === 'Venus') {
-      yearMultiplier = 0.62;
+      return 0.62;
     } else if (planetName === 'Mars') {
-      yearMultiplier = 1.88;
+      return 1.88;
     } else if (planetName === 'Jupiter') {
-      yearMultiplier = 11.86;
+      return 11.86;
     }
-    return yearMultiplier * secondsPerYear;
   }
 
-  timeDifference(planet) {
-    let divider;
+  ageOnPlanet(planet) {
+    let multiplier;
     if (planet) {
-      divider = this.whichPlanet(planet);
+      multiplier = this.whichPlanet(planet) * secondsPerYear;;
     } else if (!planet) {
-      divider = 1;
+      multiplier = 1;
     }
-    return this.beginTime.diff(this.endTime, 'seconds') / divider;
+    return this.beginTime.diff(this.endTime, 'seconds') / multiplier;
   }
 
-  lifeExpectancy(smoker, exerciser, continent) {
+  lifeExpectancy(smoker, exerciser, continent, planet) {
+    const divider = this.whichPlanet(planet);
     let finalAge;
 
     if (continent === 'Africa') {
@@ -66,9 +64,18 @@ export class TimeCruncher {
     if (exerciser) {
       finalAge += 5;
     }
-    return finalAge;
+    return finalAge / divider;
   }
 
-  
+  lifeRemaining(smoker, exerciser, continent, planet) {
+    const remaining = (this.lifeExpectancy(smoker, exerciser, continent, planet) - this.ageOnPlanet(planet)).toFixed(2);
 
+    if (remaining > 0) {
+      return `It looks as though you have approximately ${remaining} solar years left to live on ${planet}. Enjoy!`;
+    } else if (remaining === 0) {
+      return `You're living life on the edge! You may die at any moment, live it up on ${planet}!`;
+    } else if (remaining < 0) {
+      return `Holy smokes! You should have been dead ${remaining} ${planet} years ago!`;
+    }
+  }
 }
